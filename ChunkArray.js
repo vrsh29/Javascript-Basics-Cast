@@ -20,10 +20,26 @@ function chunkArray(arr, len)
 //       i += len;
 //   }
 //   return chunkArr;
+//  });
 
 //Solution 2 : 
+    //Initialize Chunk arr     
+    const chunkArr = [];
 
+    //Loop through the arr
+    arr.forEach(val => {
+      // get last element
+      const last = chunkArr[chunkArr.length - 1];
 
+      //check if last and if last length is equal to the chunk len
+      if(!last || last.length === len) {
+        chunkArr.push([val]);
+      }
+      else {
+        last.push(val);
+      }
+    });  
+    return chunkArr;
 }
 // Call Function
 const output = chunkArray([1, 2, 3, 4, 5, 6, 7], 2);
