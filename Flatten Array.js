@@ -10,7 +10,12 @@ function flattenArray(arrays) {
 // }
 
 // Solution 2 : 
+  //  return [].concat.apply([], arrays);
+// Solution 3 : using spread operation
 
+    return [].concat(...arrays);
+
+}
 
 // Call Function
 const output = flattenArray([[1, 2], [3, 4], [5, 6], [7]]);
